@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pardoseală Supraînăltată de Vanzare | Grusman Properties</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header { background: #1a365d; color: white; padding: 1rem 0; text-align: center; }
+        header h1 { font-size: 2rem; }
+        
+        /* Hero */
+        .hero { background: linear-gradient(rgba(26,54,93,0.8), rgba(26,54,93,0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23ddd"/></svg>');
+            background-size: cover; color: white; padding: 80px 0; text-align: center; }
+        .hero h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+        
+        /* Content */
+        .content { padding: 60px 0; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .text h3 { color: #1a365d; font-size: 1.8rem; margin-bottom: 20px; }
+        .text p { margin-bottom: 15px; }
+        .image { background: #f0f0f0; height: 300px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+        .image-placeholder { color: #999; font-size: 1.2rem; text-align: center; padding: 20px; }
+        
+        /* Specs */
+        .specs { background: #f8f9fa; padding: 60px 0; }
+        .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .spec-card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center; }
+        .spec-card h4 { color: #1a365d; margin-bottom: 10px; }
+        
+        /* Contact */
+        .contact { background: #1a365d; color: white; padding: 60px 0; text-align: center; }
+        .contact h3 { font-size: 2rem; margin-bottom: 20px; }
+        .contact-btn { display: inline-block; background: #d69e2e; color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 10px; }
+        .contact-btn:hover { background: #b7791f; }
+        
+        /* Footer */
+        footer { background: #0f2744; color: white; padding: 20px 0; text-align: center; }
+        
+        /* EDITABLE STYLES - Modifica aici culorile */
+        :root {
+            --primary-color: #1a365d;    /* Culoare principala - albastru */
+            --accent-color: #d69e2e;     /* Culoare accent - auriu */
+            --bg-light: #f8f9fa;         /* Fundal deschis */
+        }
+        
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .hero h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- EDITABLE: Header -->
+    <header>
+        <div class="container">
+            <h1>GRUSMAN PROPERTIES</h1>
+        </div>
+    </header>
+
+    <!-- EDITABLE: Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Pardoseală Supraînăltată Profesională</h2>
+            <p>Solutii moderne pentru pardoseli tehnice in spatiile de birouri, servere si spatii industriale</p>
+        </div>
+    </section>
+
+    <!-- EDITABLE: Descriere -->
+    <section class="content">
+        <div class="container">
+            <div class="grid">
+                <div class="text">
+                    <h3>Ce este Pardoseala Supraînăltată?</h3>
+                    <p>Pardoseala supraînăltată (raised floor) este o solutie moderna care creeaza un spatiu tehnic sub pardoseala circulabila, ideal pentru cabluri, conducte si instalatii.</p>
+                    <p><strong>Avantaje:</strong> Acces facil la instalatii, flexibilitate in reconfigurare, aerisire imbunatatita, izolare fonica si termica.</p>
+                    
+                    <p><strong>Aplicatii:</strong> Centre de date, birouri open-space, sali de operatie, laboratoare, spatii comerciale.</p>
+                </div>
+                <!-- EDITABLE: Inlocuieste cu poza reala -->
+                <div class="image">
+                    <div class="image-placeholder">[POZA PARDOSEALA SUPRAINALTATA]<br>Inlocuieste cu <img src="poza.jpg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDITABLE: Specificatii -->
+    <section class="specs">
+        <div class="container">
+            <h3 style="text-align: center; color: #1a365d; font-size: 2rem; margin-bottom: 40px;">Specificatii Tehnice</h3>
+            
+            <div class="specs-grid">
+                <!-- EDITABLE: Modifica specificatiile -->
+                <div class="spec-card">
+                    <h4>Inaltime</h4>
+                    <p>15cm - 120cm<br>(reglabil in functie de nevoi)</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h4>Material Panouri</h4>
+                    <p>Placi HPL (High Pressure Laminate)<br>Sau conductiv antistatic</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h4>Capacitate</h4>
+                    <p>Pana la 1500 kg/m²<br>(conform EN 12825)</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h4>Dimensiune Placi</h4>
+                    <p>60x60cm standard<br>Sau la comanda</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDITABLE: Contact -->
+    <section class="contact">
+        <div class="container">
+            <h3>Solicita Oferta Personalizata</h3>
+            <p style="margin-bottom: 30px;">Contacteaza-ne pentru dimensionare si oferta personalizata in functie de spatiul tau.</p>
+            
+            <!-- EDITABLE: Modifica datele de contact -->
+            <a href="tel:0770508549" class="contact-btn">📞 Suna: 0770 508 549</a>
+            <a href="mailto:haletomesti@gmail.com" class="contact-btn">✉️ Email: haletomesti@gmail.com</a>
+        </div>
+    </section>
+
+    <!-- EDITABLE: Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Grusman Properties. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+</body>
+</html>
