@@ -3,140 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pardoseală Supraînăltată de Vanzare | Grusman Properties</title>
+    <title>Pardoseală Supraînăltată – Grusman Properties</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            color: #333;
+            background: #f5f5f5;
+        }
         
         /* Header */
-        header { background: #1a365d; color: white; padding: 1rem 0; text-align: center; }
-        header h1 { font-size: 2rem; }
+        .header {
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1a365d;
+            text-decoration: none;
+        }
+        .logo span {
+            color: #d69e2e;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        .nav-menu a {
+            color: #333;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+        .nav-menu a:hover {
+            color: #d69e2e;
+        }
         
-        /* Hero */
-        .hero { background: linear-gradient(rgba(26,54,93,0.8), rgba(26,54,93,0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23ddd"/></svg>');
-            background-size: cover; color: white; padding: 80px 0; text-align: center; }
-        .hero h2 { font-size: 2.5rem; margin-bottom: 20px; }
-        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
         
-        /* Content */
-        .content { padding: 60px 0; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-        .text h3 { color: #1a365d; font-size: 1.8rem; margin-bottom: 20px; }
-        .text p { margin-bottom: 15px; }
-        .image { background: #f0f0f0; height: 300px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
-        .image-placeholder { color: #999; font-size: 1.2rem; text-align: center; padding: 20px; }
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
         
-        /* Specs */
-        .specs { background: #f8f9fa; padding: 60px 0; }
-        .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .spec-card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center; }
-        .spec-card h4 { color: #1a365d; margin-bottom: 10px; }
+        /* Product Section */
+        .product-section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
         
-        /* Contact */
-        .contact { background: #1a365d; color: white; padding: 60px 0; text-align: center; }
-        .contact h3 { font-size: 2rem; margin-bottom: 20px; }
-        .contact-btn { display: inline-block; background: #d69e2e; color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 10px; }
-        .contact-btn:hover { background: #b7791f; }
+        .product-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .product-image {
+            background: #f8f9fa;
+            border-radius: 8px;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #ddd;
+        }
+        .product-image-placeholder {
+            text-align: center;
+            color: #999;
+            padding: 20px;
+        }
+        .product-image-placeholder img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        
+        .product-info h2 {
+            color: #1a365d;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .product-code {
+            color: #d69e2e;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .product-size {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        /* Specs Table */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .specs-table tr {
+            border-bottom: 1px solid #eee;
+        }
+        .specs-table tr:last-child {
+            border-bottom: none;
+        }
+        .specs-table td {
+            padding: 15px 10px;
+        }
+        .specs-table td:first-child {
+            font-weight: 600;
+            color: #1a365d;
+            width: 40%;
+        }
+        .specs-table td:last-child {
+            color: #555;
+        }
+        
+        /* Advantages */
+        .advantages {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .advantages h3 {
+            color: #1a365d;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .advantages ul {
+            list-style: none;
+            padding: 0;
+        }
+        .advantages li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .advantages li:last-child {
+            border-bottom: none;
+        }
+        .advantages li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #d69e2e;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: #1a365d;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .contact-btn {
+            display: inline-block;
+            background: #d69e2e;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+        .contact-btn:hover {
+            background: #b7791f;
+        }
+        .contact-btn.secondary {
+            background: transparent;
+            border: 2px solid white;
+        }
+        .contact-btn.secondary:hover {
+            background: white;
+            color: #1a365d;
+        }
         
         /* Footer */
-        footer { background: #0f2744; color: white; padding: 20px 0; text-align: center; }
+        footer {
+            background: #0f2744;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
         
-        /* EDITABLE STYLES - Modifica aici culorile */
-        :root {
-            --primary-color: #1a365d;    /* Culoare principala - albastru */
-            --accent-color: #d69e2e;     /* Culoare accent - auriu */
-            --bg-light: #f8f9fa;         /* Fundal deschis */
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
         
         @media (max-width: 768px) {
-            .grid { grid-template-columns: 1fr; }
-            .hero h2 { font-size: 1.8rem; }
+            .nav-menu {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .product-header {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        /* EDITABLE STYLES */
+        :root {
+            --primary-color: #1a365d;
+            --accent-color: #d69e2e;
+            --bg-light: #f5f5f5;
         }
     </style>
 </head>
 <body>
-    <!-- EDITABLE: Header -->
-    <header>
-        <div class="container">
-            <h1>GRUSMAN PROPERTIES</h1>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="https://grusman.ro" class="logo">Grusman <span>Properties</span></a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="https://grusman.ro">Home</a></li>
+                    <li><a href="https://grusman.ro/about-us/">About Us</a></li>
+                    <li><a href="https://grusman.ro/shop">Products</a></li>
+                    <li><a href="https://grusman.ro/contact/">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">☰</button>
         </div>
     </header>
 
-    <!-- EDITABLE: Hero Section -->
+    <!-- Hero -->
     <section class="hero">
-        <div class="container">
-            <h2>Pardoseală Supraînăltată Profesională</h2>
-            <p>Solutii moderne pentru pardoseli tehnice in spatiile de birouri, servere si spatii industriale</p>
-        </div>
+        <h1>Raised Flooring</h1>
+        <p class="subtitle">Pardoseală Supraînăltată Profesională</p>
     </section>
 
-    <!-- EDITABLE: Descriere -->
-    <section class="content">
-        <div class="container">
-            <div class="grid">
-                <div class="text">
-                    <h3>Ce este Pardoseala Supraînăltată?</h3>
-                    <p>Pardoseala supraînăltată (raised floor) este o solutie moderna care creeaza un spatiu tehnic sub pardoseala circulabila, ideal pentru cabluri, conducte si instalatii.</p>
-                    <p><strong>Avantaje:</strong> Acces facil la instalatii, flexibilitate in reconfigurare, aerisire imbunatatita, izolare fonica si termica.</p>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="product-section">
+            <div class="product-header">
+                <!-- Product Image -->
+                <div class="product-image">
+                    <div class="product-image-placeholder">
+                        <!-- EDITABLE: Înlocuiește cu imaginea reală -->
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999' font-family='Arial' font-size='16'%3E[POZA PARDOSEALA SUPRAINALTATA]%3C/text%3E%3C/svg%3E" alt="Pardoseală Supraînăltată">
+                        <p style="margin-top:10px;color:#666;font-size:0.9rem;">Înlocuiește cu imaginea reală</p>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <h2>Encapsulated Cement</h2>
+                    <p class="product-code">Product name: Raised floor made of cement encapsulated in steel</p>
+                    <p class="product-size">600×600 mm</p>
                     
-                    <p><strong>Aplicatii:</strong> Centre de date, birouri open-space, sali de operatie, laboratoare, spatii comerciale.</p>
+                    <table class="specs-table">
+                        <tr>
+                            <td>International name</td>
+                            <td>QS1502806</td>
+                        </tr>
+                        <tr>
+                            <td>Size (mm)</td>
+                            <td>600×600×35</td>
+                        </tr>
+                        <tr>
+                            <td>Material</td>
+                            <td>Cement encapsulated in steel</td>
+                        </tr>
+                        <tr>
+                            <td>Fire class</td>
+                            <td>Class A1</td>
+                        </tr>
+                        <tr>
+                            <td>Concentrated load</td>
+                            <td>≥ 3040 N / 680 LB / 300 KG</td>
+                        </tr>
+                        <tr>
+                            <td>Maximum load (N)</td>
+                            <td>≥ 8850 N / 1980 LB / 900 kg</td>
+                        </tr>
+                        <tr>
+                            <td>Uniformly distributed load</td>
+                            <td>≥ 12500 N / 2810 LB / 1275 kg</td>
+                        </tr>
+                    </table>
                 </div>
-                <!-- EDITABLE: Inlocuieste cu poza reala -->
-                <div class="image">
-                    <div class="image-placeholder">[POZA PARDOSEALA SUPRAINALTATA]<br>Inlocuieste cu <img src="poza.jpg"></div>
-                </div>
+            </div>
+
+            <!-- Advantages -->
+            <div class="advantages">
+                <h3>Advantages of this product</h3>
+                <ul>
+                    <!-- EDITABLE: Modifica avantajele -->
+                    <li>Can support loads much more heavier than a raised floor system made of wood conglomerate or calcium sulfate due to materials used</li>
+                    <li>Is resistant to fire and moisture</li>
+                    <li>Offers the best absorption acoustics, durability and service life</li>
+                    <li>Mechanically fixed</li>
+                    <li>Cable bed between tiles</li>
+                    <li>Floating floor panels with dimensions of 600x600mm are created from an upper sheet of steel termo formed, with 36 concave holes, welded on a top steel plate and a stabilizing edge for the pedestal that is coming under it</li>
+                    <li>Due to his final treatment of electrostatic painting, the floor has a superior ranking to fire according to European standards</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container" style="max-width:800px;margin:0 auto;padding:0 20px;">
+            <h2>Solicită Ofertă</h2>
+            <p style="font-size:1.1rem;opacity:0.9;">Contactează-ne pentru dimensionare și ofertă personalizată</p>
+            
+            <div class="contact-buttons">
+                <!-- EDITABLE: Modifica datele de contact -->
+                <a href="tel:0770508549" class="contact-btn">📞 0770 508 549</a>
+                <a href="mailto:haletomesti@gmail.com" class="contact-btn secondary">✉️ haletomesti@gmail.com</a>
             </div>
         </div>
     </section>
 
-    <!-- EDITABLE: Specificatii -->
-    <section class="specs">
-        <div class="container">
-            <h3 style="text-align: center; color: #1a365d; font-size: 2rem; margin-bottom: 40px;">Specificatii Tehnice</h3>
-            
-            <div class="specs-grid">
-                <!-- EDITABLE: Modifica specificatiile -->
-                <div class="spec-card">
-                    <h4>Inaltime</h4>
-                    <p>15cm - 120cm<br>(reglabil in functie de nevoi)</p>
-                </div>
-                
-                <div class="spec-card">
-                    <h4>Material Panouri</h4>
-                    <p>Placi HPL (High Pressure Laminate)<br>Sau conductiv antistatic</p>
-                </div>
-                
-                <div class="spec-card">
-                    <h4>Capacitate</h4>
-                    <p>Pana la 1500 kg/m²<br>(conform EN 12825)</p>
-                </div>
-                
-                <div class="spec-card">
-                    <h4>Dimensiune Placi</h4>
-                    <p>60x60cm standard<br>Sau la comanda</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- EDITABLE: Contact -->
-    <section class="contact">
-        <div class="container">
-            <h3>Solicita Oferta Personalizata</h3>
-            <p style="margin-bottom: 30px;">Contacteaza-ne pentru dimensionare si oferta personalizata in functie de spatiul tau.</p>
-            
-            <!-- EDITABLE: Modifica datele de contact -->
-            <a href="tel:0770508549" class="contact-btn">📞 Suna: 0770 508 549</a>
-            <a href="mailto:haletomesti@gmail.com" class="contact-btn">✉️ Email: haletomesti@gmail.com</a>
-        </div>
-    </section>
-
-    <!-- EDITABLE: Footer -->
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>© 2025 Grusman Properties. Toate drepturile rezervate.</p>
-        </div>
+        <p>© 2025 Grusman Properties. Toate drepturile rezervate.</p>
     </footer>
 </body>
 </html>
